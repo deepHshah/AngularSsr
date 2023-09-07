@@ -16,6 +16,7 @@ export class EmployeeListComponent implements OnInit {
     this.dataService.getEmployees().subscribe(data => {
       this.employees = data;
       console.log(this.employees[0]);
+      console.log('Update2')
       // this.employees.forEach(employee => {
       //   console.log(employee.imageUrl)
       // });
