@@ -15,17 +15,18 @@ export class EmployeeListComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getEmployees().subscribe(data => {
       this.employees = data;
-      this.employees.forEach(employee => {
-        // console.log(employee.firstName)
+      console.log(this.employees[0]);
+      // this.employees.forEach(employee => {
+      //   console.log(employee.imageUrl)
+      // });
 
-        this.meta.addTags([
-          { name: 'twitter:card', content: 'summary' },
-          { name: 'og:url', content: '/about' },
-          { name: 'og:title', content: `${employee.firstName} ${employee.lastName}`},
-          { name: 'og:description', content: `These are the employees of Shah Group Of Industries`  },
-          { name: 'og:image', content:  employee.imageUrl },
-        ]);
-      });
+      this.meta.addTags([
+        { name: 'twitter:card', content: 'summary' },
+        { name: 'og:url', content: '/about' },
+        { name: 'og:title', content: `${this.employees[0].firstName} ${this.employees[0].lastName}`},
+        { name: 'og:description', content: `These are the this.employees of Shah Group Of Industries`  },
+        { name: 'og:image', content:  this.employees[0].imageUrl },
+      ]);
       
     });
   } 
