@@ -20,16 +20,36 @@ export class EmployeeListComponent implements OnInit {
       //   console.log(employee.imageUrl)
       // });
 
+      // this.meta.addTags([
+      //   { name: 'twitter:card', content: 'summary' },
+      //   { name: 'og:url', content: '/about' },
+      //   { name: 'og:title', content: `${this.employees[0].firstName} ${this.employees[0].lastName}`},
+      //   { name: 'og:description', content: `These are the this.employees of Shah Group Of Industries`  },
+      //   { name: 'og:image', content:  this.employees[0].imageUrl },
+      // ]);
+
       this.meta.addTags([
-        { name: 'twitter:card', content: 'summary' },
-        { name: 'og:url', content: '/about' },
-        { name: 'og:title', content: `${this.employees[0].firstName} ${this.employees[0].lastName}`},
-        { name: 'og:description', content: `These are the this.employees of Shah Group Of Industries`  },
-        { name: 'og:image', content:  this.employees[0].imageUrl },
+        { name: 'title', content: `${this.employees[0].firstName} ${this.employees[0].lastName}` },
+        { name: 'description', content: this.employees[0].email },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://angular-ssr-testing.netlify.app/' },
+        { property: 'og:title', content: `${this.employees[0].firstName} ${this.employees[0].lastName}` },
+        { property: 'og:description', content: this.employees[0].email },
+        { property: 'og:image', content: this.employees[0].imageUrl },
+        { property: 'twitter:card', content: 'summary_large_image' },
+        { property: 'twitter:url', content: 'https://angular-ssr-testing.netlify.app/' },
+        { property: 'twitter:title', content:`${this.employees[0].firstName} ${this.employees[0].lastName}` },
+        { property: 'twitter:description', content: this.employees[0].email },
+        { property: 'twitter:image', content: this.employees[0].imageUrl },
       ]);
-      
-    });
-  } 
+    })
+  }
 }
+    
+    
+    
+    
+    
+    
 
 
